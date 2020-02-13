@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:weightSum="2"
+        android:background="@drawable/backgraound"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:gravity="center"
+        android:text="Result"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_text_style"
+        android:backgroundTint="#9ED0E6"
+        android:id="@+id/resultTextViewId"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".3"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_weight="1.6"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+    <LinearLayout
+    android:orientation="vertical"
+    android:weightSum="8"
+    android:layout_weight="1"
+    android:layout_width="0dp"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:inputType="numberDecimal"
+        style="@style/MyEditTextStyle"
+        android:id="@+id/firstSemesterEditTextId"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:hint="1st Semester GPA"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+    <EditText
+        android:inputType="numberDecimal"
+        style="@style/MyEditTextStyle"
+        android:id="@+id/thirdSemesterEditTextId"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:hint="3rd Semester GPA"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+    <EditText
+        android:inputType="numberDecimal"
+        style="@style/MyEditTextStyle"
+        android:id="@+id/fifthSemesterEditTextId"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:hint="5th Semester GPA"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+    <EditText
+        android:layout_marginBottom="20dp"
+        android:inputType="numberDecimal"
+        style="@style/MyEditTextStyle"
+        android:id="@+id/seventhSemesterEditTextId"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:hint="7th Semester GPA"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+
+        <Button
+            android:backgroundTint="#1CDBF3"
+            android:id="@+id/calculateButtonId"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:layout_marginTop="25dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_style"
+            android:text="Calculate"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:weightSum="8"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:inputType="numberDecimal"
+            style="@style/MyEditTextStyle"
+            android:id="@+id/secondSemesterEditTextId"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:hint="2nd Semester GPA"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+        <EditText
+            android:inputType="numberDecimal"
+            style="@style/MyEditTextStyle"
+            android:id="@+id/fourthSemesterEditTextId"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:hint="4th Semester GPA"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+        <EditText
+            android:textAlignment="center"
+            android:inputType="numberDecimal"
+            style="@style/MyEditTextStyle"
+            android:id="@+id/sixthSemesterEditTextId"
+            android:textSize="15sp"
+            android:hint="6th Semester GPA"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+        <EditText
+            android:layout_marginBottom="20dp"
+            android:textAlignment="center"
+            android:id="@+id/eighthSemesterEditTextId"
+            style="@style/MyEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:hint="8th Semester GPA"
+            android:inputType="numberDecimal"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/resetButtonId"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_style"
+            android:backgroundTint="#EE0505"
+            android:text="Reset"
+            android:textSize="25sp" />
+
+    </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>
+</LinearLayout>
