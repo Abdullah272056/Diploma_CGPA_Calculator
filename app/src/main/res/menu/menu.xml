@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/themeItemId"
+        android:icon="@drawable/theme"
+        app:showAsAction="always"
+        android:visible="true"
+        android:title="Share"/>
     <item
         android:id="@+id/shareItemId"
         android:icon="@drawable/ic_baseline_share_24"
