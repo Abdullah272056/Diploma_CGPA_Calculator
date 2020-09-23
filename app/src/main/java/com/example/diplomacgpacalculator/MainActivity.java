@@ -1,10 +1,15 @@
 package com.example.diplomacgpacalculator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Calculation calculation=new Calculation();
     TextView result;
     Button calculateBtn,resetbtn;
+    String totalCgpaAndGrade;
 
 
     @Override
@@ -44,8 +50,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //set button onclickListener
         calculateBtn.setOnClickListener(this);
         resetbtn.setOnClickListener(this);
-
-
     }
 
     @Override
@@ -100,18 +104,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     float float_seven = Float.parseFloat(seven.getText().toString());
                     float float_eight = Float.parseFloat(eight.getText().toString());
 
-                    String totalCgpaAndGrade=calculation.result(float_first,float_second,float_three, float_four,float_five,float_six,float_seven,float_eight);
-
-                    //decimal number limit set
-                   // String Final_Cgpa= String.format("%.3g%n", total_cgpa);
+                    totalCgpaAndGrade=calculation.result(float_first,float_second,float_three, float_four,float_five,float_six,float_seven,float_eight);
 
                     result.setText(totalCgpaAndGrade);
                 }
-
             }
-
         }
         if(v.getId()==R.id.resetButtonId){
+            result.setText("");
             first.setText("");
             second.setText("");
             three.setText("");
@@ -121,5 +121,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             seven.setText("");
             eight.setText("");
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.shareItemId:
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                String shareBody = "first semester GPA is =\t\t"+first.getText().toString()+"\n"+
+                        "Second semester GPA is =\t\t"+second.getText().toString()+"\n"+
+                        "Third semester GPA is =\t\t"+three.getText().toString()+"\n"+
+                        "Fourth semester GPA is =\t\t"+four.getText().toString()+"\n"+
+                        "Fifth semester GPA is =\t\t"+five.getText().toString()+"\n"+
+                        "Six semester GPA is =\t\t"+six.getText().toString()+"\n"+
+                        "Seven semester GPA is =\t\t"+seven.getText().toString()+"\n"+
+                        "Eight semester GPA is =\t\t"+eight.getText().toString()+"\n\n\n"+
+                        "Total CGPA is =\t\t"+totalCgpaAndGrade;
+                        ;
+                String shareSub = "Diploma CGPA ";
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, shareSub);
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                startActivity(Intent.createChooser(sharingIntent, "Share using"));
+
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
