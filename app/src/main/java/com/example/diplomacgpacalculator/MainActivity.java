@@ -17,8 +17,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView result;
     Button calculateBtn,resetbtn;
 
-    TextWatcher textWatcher=null;
-    //int float_s, def=4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,43 +41,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         seven=findViewById(R.id.seventhSemesterEditTextId);
         eight=findViewById(R.id.eighthSemesterEditTextId);
 
-
-        // textWatcher
-        textWatcher=new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-//                if(second.length()>0){
-//                    Toast.makeText(MainActivity.this, " wow", Toast.LENGTH_SHORT).show();
-//                    String st=second.getText().toString();
-//                    Float n=Float.parseFloat(st);
-//                    if (n>4){
-//                        second.setText("4");
-//                    }
-//                    else{
-//                        Toast.makeText(MainActivity.this, "zero", Toast.LENGTH_SHORT).show();
-//                    }
-//
-//                }
-//                else {
-//                    second.setText("2nd Semester GPA");
-//                }
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s){
-
-            }
-        };
-
-        second.addTextChangedListener(textWatcher);
-
         //set button onclickListener
         calculateBtn.setOnClickListener(this);
         resetbtn.setOnClickListener(this);
@@ -90,59 +51,67 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v.getId()==R.id.calculateButtonId){
-
             if(first.length()<1){
-
-                Toast.makeText(MainActivity.this, "Please input first semester GPA", Toast.LENGTH_SHORT).show();
+                first.setError("Enter a value");
             }
-
             else if(second.length()<1){
-
-                Toast.makeText(MainActivity.this, "Please input second semester GPA", Toast.LENGTH_SHORT).show();
+                second.setError("Enter a value");
             }
             else if(three.length()<1){
-
-                Toast.makeText(MainActivity.this, "Please input three semester GPA", Toast.LENGTH_SHORT).show();
+                three.setError("Enter a value");
             }else if(four.length()<1){
-
-                Toast.makeText(MainActivity.this, "Please input four semester GPA", Toast.LENGTH_SHORT).show();
+                four.setError("Enter a value");
             }else if(five.length()<1){
-
-                Toast.makeText(MainActivity.this, "Please input five semester GPA", Toast.LENGTH_SHORT).show();
+                five.setError("Enter a value");
             }else if(six.length()<1){
-
-                Toast.makeText(MainActivity.this, "Please input six semester GPA", Toast.LENGTH_SHORT).show();
+                six.setError("Enter a value");
             }else if(seven.length()<1){
-
-                Toast.makeText(MainActivity.this, "Please input seven semester GPA", Toast.LENGTH_SHORT).show();
+                seven.setError("Enter a value");
             }else if(eight.length()<1){
-
-                Toast.makeText(MainActivity.this, "Please input eight semester GPA", Toast.LENGTH_SHORT).show();
+                eight.setError("Enter a value");
             }
-
             else{
-                float float_first = Float.parseFloat(first.getText().toString());
-                float float_second = Float.parseFloat(second.getText().toString());
-                float float_three = Float.parseFloat(three.getText().toString());
-                float float_four = Float.parseFloat(four.getText().toString());
-                float float_five = Float.parseFloat(five.getText().toString());
-                float float_six = Float.parseFloat(six.getText().toString());
-                float float_seven = Float.parseFloat(seven.getText().toString());
-                float float_eight = Float.parseFloat(eight.getText().toString());
 
+                if(Float.parseFloat(first.getText().toString())>4 || Float.parseFloat(first.getText().toString())<2){
+                    first.setError("Enter a valid value");
+                }
+                else if(Float.parseFloat(second.getText().toString())>4 || Float.parseFloat(second.getText().toString())<2){
+                    second.setError("Enter a valid value");
+                }
+                else if(Float.parseFloat(three.getText().toString())>4|| Float.parseFloat(three.getText().toString())<2){
+                    three.setError("Enter a valid value");
+                }else if(Float.parseFloat(four.getText().toString())>4|| Float.parseFloat(four.getText().toString())<2){
+                    four.setError("Enter a valid value");
+                }else if(Float.parseFloat(five.getText().toString())>4|| Float.parseFloat(five.getText().toString())<2){
+                    five.setError("Enter a valid value");
+                }else if(Float.parseFloat(six.getText().toString())>4|| Float.parseFloat(six.getText().toString())<2){
+                    six.setError("Enter a valid value");
+                }else if(Float.parseFloat(seven.getText().toString())>4|| Float.parseFloat(seven.getText().toString())<2){
+                    seven.setError("Enter a valid value");
+                }else if(Float.parseFloat(eight.getText().toString())>4|| Float.parseFloat(eight.getText().toString())<2){
+                    eight.setError("Enter a valid value");
+                }else {
+                    float float_first = Float.parseFloat(first.getText().toString());
+                    float float_second = Float.parseFloat(second.getText().toString());
+                    float float_three = Float.parseFloat(three.getText().toString());
+                    float float_four = Float.parseFloat(four.getText().toString());
+                    float float_five = Float.parseFloat(five.getText().toString());
+                    float float_six = Float.parseFloat(six.getText().toString());
+                    float float_seven = Float.parseFloat(seven.getText().toString());
+                    float float_eight = Float.parseFloat(eight.getText().toString());
 
+                    String totalCgpaAndGrade=calculation.result(float_first,float_second,float_three, float_four,float_five,float_six,float_seven,float_eight);
 
-                float total_cgpa=calculation.reasult(float_first,float_second,float_three, float_four,float_five,float_six,float_seven,float_eight);
+                    //decimal number limit set
+                   // String Final_Cgpa= String.format("%.3g%n", total_cgpa);
 
-                //decimal number limit set
-               String Final_Cgpa= String.format("%.3g%n", total_cgpa);
+                    result.setText(totalCgpaAndGrade);
+                }
 
-               result.setText(String.valueOf(Final_Cgpa));
             }
 
         }
         if(v.getId()==R.id.resetButtonId){
-
             first.setText("");
             second.setText("");
             three.setText("");
@@ -152,8 +121,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             seven.setText("");
             eight.setText("");
         }
-
-
-
     }
 }

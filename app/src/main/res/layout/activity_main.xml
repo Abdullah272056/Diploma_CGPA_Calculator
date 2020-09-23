@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
 
@@ -16,16 +16,15 @@
         android:layout_height="match_parent">
 
     <TextView
+        android:textStyle="bold"
         android:gravity="center"
         android:text="Result"
         android:layout_marginTop="10dp"
         android:background="@drawable/edit_text_style"
-        android:backgroundTint="#9ED0E6"
         android:id="@+id/resultTextViewId"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight=".3"
-        android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="30sp" />
 
@@ -36,123 +35,175 @@
         android:layout_width="match_parent"
         android:layout_height="0dp">
 
-    <LinearLayout
-    android:orientation="vertical"
-    android:weightSum="8"
-    android:layout_weight="1"
-    android:layout_width="0dp"
-    android:layout_height="match_parent">
-
-    <EditText
-        android:inputType="numberDecimal"
-        style="@style/MyEditTextStyle"
-        android:id="@+id/firstSemesterEditTextId"
-        android:textSize="15sp"
-        android:textAlignment="center"
-        android:hint="1st Semester GPA"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"/>
-
-    <EditText
-        android:inputType="numberDecimal"
-        style="@style/MyEditTextStyle"
-        android:id="@+id/thirdSemesterEditTextId"
-        android:textSize="15sp"
-        android:textAlignment="center"
-        android:hint="3rd Semester GPA"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"/>
-
-    <EditText
-        android:inputType="numberDecimal"
-        style="@style/MyEditTextStyle"
-        android:id="@+id/fifthSemesterEditTextId"
-        android:textSize="15sp"
-        android:textAlignment="center"
-        android:hint="5th Semester GPA"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"/>
-
-    <EditText
-        android:layout_marginBottom="20dp"
-        android:inputType="numberDecimal"
-        style="@style/MyEditTextStyle"
-        android:id="@+id/seventhSemesterEditTextId"
-        android:textSize="15sp"
-        android:textAlignment="center"
-        android:hint="7th Semester GPA"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"/>
-
-
-        <Button
-            android:backgroundTint="#1CDBF3"
-            android:id="@+id/calculateButtonId"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="5dp"
-            android:layout_marginTop="25dp"
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/edit_text_style"
-            android:text="Calculate"
-            android:textSize="25sp" />
-    </LinearLayout>
+            android:orientation="vertical"
+            android:weightSum="5">
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/MyEditTextStyle"
+                app:helperTextTextColor="#FF0000"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
 
-    <LinearLayout
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_gravity="center"
+                android:hint="1st Semester GPA"
+                android:gravity="center"
+                android:id="@+id/firstSemesterEditTextId"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/MyEditTextStyle"
+                app:helperTextTextColor="#FF0000"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/thirdSemesterEditTextId"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:hint="3rd Semester GPA"
+                    android:inputType="numberDecimal"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/MyEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:helperTextTextColor="#FF0000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fifthSemesterEditTextId"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:hint="5th Semester GPA"
+                    android:inputType="numberDecimal"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/MyEditTextStyle"
+                app:helperTextTextColor="#FF0000"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/seventhSemesterEditTextId"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:hint="7th Semester GPA"
+                    android:inputType="numberDecimal"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/calculateButtonId"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="5dp"
+                android:layout_marginTop="25dp"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_style"
+                android:backgroundTint="#C400BCD4"
+                android:text="Calculate"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
         android:orientation="vertical"
-        android:weightSum="8"
+        android:weightSum="5"
         android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="match_parent">
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/MyEditTextStyle"
+                app:helperTextTextColor="#FF0000"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:inputType="numberDecimal"
+                    android:id="@+id/secondSemesterEditTextId"
+                    android:textSize="18sp"
+                    android:hint="2nd Semester GPA"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:inputType="numberDecimal"
-            style="@style/MyEditTextStyle"
-            android:id="@+id/secondSemesterEditTextId"
-            android:textSize="15sp"
-            android:textAlignment="center"
-            android:hint="2nd Semester GPA"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"/>
 
-        <EditText
-            android:inputType="numberDecimal"
-            style="@style/MyEditTextStyle"
-            android:id="@+id/fourthSemesterEditTextId"
-            android:textSize="15sp"
-            android:textAlignment="center"
-            android:hint="4th Semester GPA"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"/>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/MyEditTextStyle"
+                app:helperTextTextColor="#FF0000"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:inputType="numberDecimal"
+                    android:id="@+id/fourthSemesterEditTextId"
+                    android:textSize="18sp"
+                    android:hint="4th Semester GPA"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:textAlignment="center"
-            android:inputType="numberDecimal"
-            style="@style/MyEditTextStyle"
-            android:id="@+id/sixthSemesterEditTextId"
-            android:textSize="15sp"
-            android:hint="6th Semester GPA"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"/>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/MyEditTextStyle"
+                app:helperTextTextColor="#FF0000"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
 
-        <EditText
-            android:layout_marginBottom="20dp"
-            android:textAlignment="center"
-            android:id="@+id/eighthSemesterEditTextId"
-            style="@style/MyEditTextStyle"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:hint="8th Semester GPA"
-            android:inputType="numberDecimal"
-            android:textSize="15sp" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:inputType="numberDecimal"
+                    android:id="@+id/sixthSemesterEditTextId"
+                    android:textSize="18sp"
+                    android:hint="6th Semester GPA"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/MyEditTextStyle"
+                app:helperTextTextColor="#FF0000"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="20dp"
+
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:gravity="center"
+                    android:id="@+id/eighthSemesterEditTextId"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="8th Semester GPA"
+                    android:inputType="numberDecimal"
+                    android:textSize="18sp"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
 
         <Button
             android:id="@+id/resetButtonId"
@@ -162,7 +213,7 @@
             android:layout_marginTop="20dp"
             android:layout_weight="1"
             android:background="@drawable/edit_text_style"
-            android:backgroundTint="#EE0505"
+            android:backgroundTint="#C6E91E63"
             android:text="Reset"
             android:textSize="25sp" />
 

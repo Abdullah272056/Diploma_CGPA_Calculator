@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Diploma CGPA Calculator</string>
+    <string name="hintF"><font size="25">1st Semester GPA</font></string>
 </resources>
