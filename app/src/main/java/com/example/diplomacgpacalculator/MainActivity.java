@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     EditText first,second,three,four,five,six,seven,eight;
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        //calculate button clicked
         if (v.getId()==R.id.calculateButtonId){
             if(first.length()<1){
                 first.setError("Enter a value");
@@ -110,6 +112,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         }
+
+        // resetButton Clicked
         if(v.getId()==R.id.resetButtonId){
             result.setText("");
             first.setText("");
@@ -120,9 +124,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             six.setText("");
             seven.setText("");
             eight.setText("");
+            totalCgpaAndGrade=null;
         }
     }
 
+
+    //creating Option Menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -130,27 +137,59 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return true;
     }
 
+
+    // set OptionMenu Item SelectListener
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.shareItemId:
-                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
-                sharingIntent.setType("text/plain");
-                String shareBody = "first semester GPA is =\t\t" + first.getText().toString() + "\n" +
-                        "Second semester GPA is =\t\t" + second.getText().toString() + "\n" +
-                        "Third semester GPA is =\t\t" + three.getText().toString() + "\n" +
-                        "Fourth semester GPA is =\t\t" + four.getText().toString() + "\n" +
-                        "Fifth semester GPA is =\t\t" + five.getText().toString() + "\n" +
-                        "Six semester GPA is =\t\t" + six.getText().toString() + "\n" +
-                        "Seven semester GPA is =\t\t" + seven.getText().toString() + "\n" +
-                        "Eight semester GPA is =\t\t" + eight.getText().toString() + "\n\n\n" +
-                        "Total CGPA is =\t\t" + totalCgpaAndGrade;
 
-                String shareSub = "Diploma CGPA ";
-                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, shareSub);
-                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
-                startActivity(Intent.createChooser(sharingIntent, "Share using"));
+        switch (item.getItemId()) {
+            //set share item Listener
+            case R.id.shareItemId:
+                if(first.length()<1){
+                    first.setError("Enter a value");
+                }
+                else if(second.length()<1){
+                    second.setError("Enter a value");
+                }
+                else if(three.length()<1){
+                    three.setError("Enter a value");
+                }else if(four.length()<1){
+                    four.setError("Enter a value");
+                }else if(five.length()<1){
+                    five.setError("Enter a value");
+                }else if(six.length()<1){
+                    six.setError("Enter a value");
+                }else if(seven.length()<1){
+                    seven.setError("Enter a value");
+                }else if(eight.length()<1){
+                    eight.setError("Enter a value");
+                }
+                else if( totalCgpaAndGrade==null){
+                    Toast.makeText(this, "Please Click Calculate Button Than Share ", Toast.LENGTH_SHORT).show();
+                }
+                else {
+
+                    Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                    sharingIntent.setType("text/plain");
+                    String shareBody = "first semester GPA is =\t\t" + first.getText().toString() + "\n" +
+                            "Second semester GPA is =\t\t" + second.getText().toString() + "\n" +
+                            "Third semester GPA is =\t\t" + three.getText().toString() + "\n" +
+                            "Fourth semester GPA is =\t\t" + four.getText().toString() + "\n" +
+                            "Fifth semester GPA is =\t\t" + five.getText().toString() + "\n" +
+                            "Six semester GPA is =\t\t" + six.getText().toString() + "\n" +
+                            "Seven semester GPA is =\t\t" + seven.getText().toString() + "\n" +
+                            "Eight semester GPA is =\t\t" + eight.getText().toString() + "\n\n\n" +
+                            "Total CGPA is =\t\t" + totalCgpaAndGrade;
+
+                    String shareSub = "Diploma CGPA ";
+                    sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, shareSub);
+                    sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                    startActivity(Intent.createChooser(sharingIntent, "Share using"));
+                }
+
                 break;
+
+            //set theme item Listener
             case R.id.themeItemId:
                 themeValue++;
                 if (themeValue == 1){
@@ -179,4 +218,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         return super.onOptionsItemSelected(item);
     }
+
 }
