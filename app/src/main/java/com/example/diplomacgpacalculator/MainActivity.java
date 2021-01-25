@@ -27,6 +27,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     String string_first,string_second,string_three,string_four,
             string_five,string_six,string_seven,string_eight;
+    float float_first,float_second,float_three,float_four,
+            float_five,float_six,float_seven,float_eight;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +69,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         string_seven = seven.getText().toString();
         string_eight = eight.getText().toString();
 
-       // if (TextUtils.isEmpty(string_first)){
         //calculate button clicked
         if (v.getId()==R.id.calculateButtonId){
             if(TextUtils.isEmpty(string_first)){
@@ -74,11 +76,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 first.requestFocus();
                 return;
             }
+            if(Float.parseFloat(string_first)>4 || Float.parseFloat(string_first)<2){
+                first.setError("Should not greater than 2 and less than 4");
+                first.requestFocus();
+                return;
+            }
+
 
              if(TextUtils.isEmpty(string_second)){
                 second.setError("Enter a value");
                 second.requestFocus();
                  return;
+            }
+            if(Float.parseFloat(string_second)>4 || Float.parseFloat(string_second)<2){
+                second.setError("Should not greater than 2 and less than 4");
+                second.requestFocus();
+                return;
             }
 
              if(TextUtils.isEmpty(string_three)){
@@ -86,8 +99,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 three.requestFocus();
                  return;
             }
+            if(Float.parseFloat(string_three)>4|| Float.parseFloat(string_three)<2){
+                three.setError("Should not greater than 2 and less than 4");
+                three.requestFocus();
+                return;
+            }
+
             if(TextUtils.isEmpty(string_four)){
                 four.setError("Enter a value");
+                four.requestFocus();
+                return;
+            }
+            if(Float.parseFloat(string_four)>4|| Float.parseFloat(string_four)<2){
+                four.setError("Should not greater than 2 and less than 4");
                 four.requestFocus();
                 return;
             }
@@ -96,8 +120,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 five.requestFocus();
                 return;
             }
+            if(Float.parseFloat(string_five)>4|| Float.parseFloat(string_five)<2){
+                five.setError("Should not greater than 2 and less than 4");
+                five.requestFocus();
+                return;
+            }
             if(TextUtils.isEmpty(string_six)){
                 six.setError("Enter a value");
+                six.requestFocus();
+                return;
+            }
+            if(Float.parseFloat(string_six)>4|| Float.parseFloat(string_six)<2){
+                six.setError("Should not greater than 2 and less than 4");
                 six.requestFocus();
                 return;
             }
@@ -106,63 +140,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 seven.requestFocus();
                 return;
             }
+            if(Float.parseFloat(string_seven)>4|| Float.parseFloat(string_seven)<2){
+                seven.setError("Should not greater than 2 and less than 4");
+                seven.requestFocus();
+                return;
+            }
             if(TextUtils.isEmpty(string_eight)){
                 eight.setError("Enter a value");
                 eight.requestFocus();
                 return;
             }
-
-                if(Float.parseFloat(string_first)>4 || Float.parseFloat(string_first)<2){
-                    first.setError("Should not greater than 2 and less than 4");
-                    first.requestFocus();
-                    return;
-                }
-
-
-                 if(Float.parseFloat(string_second)>4 || Float.parseFloat(string_second)<2){
-                    second.setError("Should not greater than 2 and less than 4");
-                     second.requestFocus();
-                    return;
-                }
-
-                 if(Float.parseFloat(string_three)>4|| Float.parseFloat(string_three)<2){
-                    three.setError("Should not greater than 2 and less than 4");
-                     three.requestFocus();
-                    return;
-                }
-                if(Float.parseFloat(string_four)>4|| Float.parseFloat(string_four)<2){
-                    four.setError("Should not greater than 2 and less than 4");
-                    four.requestFocus();
-                    return;
-                }
-                if(Float.parseFloat(string_five)>4|| Float.parseFloat(string_five)<2){
-                    five.setError("Should not greater than 2 and less than 4");
-                    five.requestFocus();
-                    return;
-                }
-                if(Float.parseFloat(string_six)>4|| Float.parseFloat(string_six)<2){
-                    six.setError("Should not greater than 2 and less than 4");
-                    six.requestFocus();
-                    return;
-                }
-                if(Float.parseFloat(string_seven)>4|| Float.parseFloat(string_seven)<2){
-                    seven.setError("Should not greater than 2 and less than 4");
-                    seven.requestFocus();
-                    return;
-                }
-                if(Float.parseFloat(string_eight)>4|| Float.parseFloat(string_eight)<2){
-                    eight.setError("Should not greater than 2 and less than 4");
-                    eight.requestFocus();
-                    return;
-                }
-                    float float_first = Float.parseFloat(first.getText().toString());
-                    float float_second = Float.parseFloat(second.getText().toString());
-                    float float_three = Float.parseFloat(three.getText().toString());
-                    float float_four = Float.parseFloat(four.getText().toString());
-                    float float_five = Float.parseFloat(five.getText().toString());
-                    float float_six = Float.parseFloat(six.getText().toString());
-                    float float_seven = Float.parseFloat(seven.getText().toString());
-                    float float_eight = Float.parseFloat(eight.getText().toString());
+            if(Float.parseFloat(string_eight)>4|| Float.parseFloat(string_eight)<2){
+                eight.setError("Should not greater than 2 and less than 4");
+                eight.requestFocus();
+                return;
+            }
+                     float_first = Float.parseFloat(string_first);
+                     float_second = Float.parseFloat(string_second);
+                     float_three = Float.parseFloat(string_three);
+                     float_four = Float.parseFloat(string_four);
+                     float_five = Float.parseFloat(string_five);
+                     float_six = Float.parseFloat(string_six);
+                     float_seven = Float.parseFloat(string_seven);
+                     float_eight = Float.parseFloat(string_eight);
 
                     totalCgpaAndGrade=calculation.result(float_first,float_second,float_three,
                             float_four,float_five,float_six,float_seven,float_eight);
@@ -204,27 +204,72 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (item.getItemId()) {
             //set share item Listener
             case R.id.shareItemId:
-                if(first.length()<1){
+                if(TextUtils.isEmpty(string_first)){
                     first.setError("Enter a value");
+                    first.requestFocus();
                 }
-                else if(second.length()<1){
+                else if(Float.parseFloat(string_first)>4 || Float.parseFloat(string_first)<2){
+                    first.setError("Should not greater than 2 and less than 4");
+                    first.requestFocus();
+                }
+                else  if(TextUtils.isEmpty(string_second)){
                     second.setError("Enter a value");
+                    second.requestFocus();
                 }
-                else if(three.length()<1){
+                else  if(Float.parseFloat(string_second)>4 || Float.parseFloat(string_second)<2){
+                    second.setError("Should not greater than 2 and less than 4");
+                    second.requestFocus();
+                }
+
+                else  if(TextUtils.isEmpty(string_three)){
                     three.setError("Enter a value");
-                }else if(four.length()<1){
-                    four.setError("Enter a value");
-                }else if(five.length()<1){
-                    five.setError("Enter a value");
-                }else if(six.length()<1){
-                    six.setError("Enter a value");
-                }else if(seven.length()<1){
-                    seven.setError("Enter a value");
-                }else if(eight.length()<1){
-                    eight.setError("Enter a value");
+                    three.requestFocus();
                 }
-                else if( totalCgpaAndGrade==null){
-                    Toast.makeText(this, "Please Click Calculate Button Than Share ", Toast.LENGTH_SHORT).show();
+                else if(Float.parseFloat(string_three)>4|| Float.parseFloat(string_three)<2){
+                    three.setError("Should not greater than 2 and less than 4");
+                    three.requestFocus();
+                }
+
+                else if(TextUtils.isEmpty(string_four)){
+                    four.setError("Enter a value");
+                    four.requestFocus();
+                }
+                else if(Float.parseFloat(string_four)>4|| Float.parseFloat(string_four)<2){
+                    four.setError("Should not greater than 2 and less than 4");
+                    four.requestFocus();
+                }
+                else if(TextUtils.isEmpty(string_five)){
+                    five.setError("Enter a value");
+                    five.requestFocus();
+
+                }
+                else if(Float.parseFloat(string_five)>4|| Float.parseFloat(string_five)<2){
+                    five.setError("Should not greater than 2 and less than 4");
+                    five.requestFocus();
+                }
+                else   if(TextUtils.isEmpty(string_six)){
+                    six.setError("Enter a value");
+                    six.requestFocus();
+                }
+                else if(Float.parseFloat(string_six)>4|| Float.parseFloat(string_six)<2){
+                    six.setError("Should not greater than 2 and less than 4");
+                    six.requestFocus();
+                }
+                else  if(TextUtils.isEmpty(string_seven)){
+                    seven.setError("Enter a value");
+                    seven.requestFocus();
+                }
+                else  if(Float.parseFloat(string_seven)>4|| Float.parseFloat(string_seven)<2){
+                    seven.setError("Should not greater than 2 and less than 4");
+                    seven.requestFocus();
+                }
+                else  if(TextUtils.isEmpty(string_eight)){
+                    eight.setError("Enter a value");
+                    eight.requestFocus();
+                }
+                else if(Float.parseFloat(string_eight)>4|| Float.parseFloat(string_eight)<2){
+                    eight.setError("Should not greater than 2 and less than 4");
+                    eight.requestFocus();
                 }
                 else {
 
