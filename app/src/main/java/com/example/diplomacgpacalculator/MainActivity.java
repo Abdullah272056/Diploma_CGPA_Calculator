@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -24,7 +25,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int themeValue=1;
     LinearLayout mainLinearLayout;
 
-
+    String string_first,string_second,string_three,string_four,
+            string_five,string_six,string_seven,string_eight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +56,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+
+        string_first = first.getText().toString();
+        string_second = second.getText().toString();
+        string_three = three.getText().toString();
+        string_four = four.getText().toString();
+        string_five = five.getText().toString();
+        string_six = six.getText().toString();
+        string_seven = seven.getText().toString();
+        string_eight = eight.getText().toString();
+
+       // if (TextUtils.isEmpty(signInEmail)){
         //calculate button clicked
         if (v.getId()==R.id.calculateButtonId){
             if(first.length()<1){
                 first.setError("Enter a value");
+                first.requestFocus();
             }
             else if(second.length()<1){
                 second.setError("Enter a value");
