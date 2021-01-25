@@ -111,26 +111,50 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 eight.requestFocus();
                 return;
             }
-            
-                if(Float.parseFloat(first.getText().toString())>4 || Float.parseFloat(first.getText().toString())<2){
-                    first.setError("Enter a valid value");
+
+                if(Float.parseFloat(string_first)>4 || Float.parseFloat(string_first)<2){
+                    first.setError("Should not greater than 2 and less than 4");
+                    first.requestFocus();
+                    return;
                 }
-                else if(Float.parseFloat(second.getText().toString())>4 || Float.parseFloat(second.getText().toString())<2){
-                    second.setError("Enter a valid value");
+
+
+                 if(Float.parseFloat(string_second)>4 || Float.parseFloat(string_second)<2){
+                    second.setError("Should not greater than 2 and less than 4");
+                     second.requestFocus();
+                    return;
                 }
-                else if(Float.parseFloat(three.getText().toString())>4|| Float.parseFloat(three.getText().toString())<2){
-                    three.setError("Enter a valid value");
-                }else if(Float.parseFloat(four.getText().toString())>4|| Float.parseFloat(four.getText().toString())<2){
-                    four.setError("Enter a valid value");
-                }else if(Float.parseFloat(five.getText().toString())>4|| Float.parseFloat(five.getText().toString())<2){
-                    five.setError("Enter a valid value");
-                }else if(Float.parseFloat(six.getText().toString())>4|| Float.parseFloat(six.getText().toString())<2){
-                    six.setError("Enter a valid value");
-                }else if(Float.parseFloat(seven.getText().toString())>4|| Float.parseFloat(seven.getText().toString())<2){
-                    seven.setError("Enter a valid value");
-                }else if(Float.parseFloat(eight.getText().toString())>4|| Float.parseFloat(eight.getText().toString())<2){
-                    eight.setError("Enter a valid value");
-                }else {
+
+                 if(Float.parseFloat(string_three)>4|| Float.parseFloat(string_three)<2){
+                    three.setError("Should not greater than 2 and less than 4");
+                     three.requestFocus();
+                    return;
+                }
+                if(Float.parseFloat(string_four)>4|| Float.parseFloat(string_four)<2){
+                    four.setError("Should not greater than 2 and less than 4");
+                    four.requestFocus();
+                    return;
+                }
+                if(Float.parseFloat(string_five)>4|| Float.parseFloat(string_five)<2){
+                    five.setError("Should not greater than 2 and less than 4");
+                    five.requestFocus();
+                    return;
+                }
+                if(Float.parseFloat(string_six)>4|| Float.parseFloat(string_six)<2){
+                    six.setError("Should not greater than 2 and less than 4");
+                    six.requestFocus();
+                    return;
+                }
+                if(Float.parseFloat(string_seven)>4|| Float.parseFloat(string_seven)<2){
+                    seven.setError("Should not greater than 2 and less than 4");
+                    seven.requestFocus();
+                    return;
+                }
+                if(Float.parseFloat(string_eight)>4|| Float.parseFloat(string_eight)<2){
+                    eight.setError("Should not greater than 2 and less than 4");
+                    eight.requestFocus();
+                    return;
+                }
                     float float_first = Float.parseFloat(first.getText().toString());
                     float float_second = Float.parseFloat(second.getText().toString());
                     float float_three = Float.parseFloat(three.getText().toString());
@@ -144,7 +168,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             float_four,float_five,float_six,float_seven,float_eight);
 
                     result.setText(totalCgpaAndGrade);
-                }
+
 
         }
 
