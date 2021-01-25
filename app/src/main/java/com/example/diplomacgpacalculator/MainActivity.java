@@ -66,31 +66,52 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         string_seven = seven.getText().toString();
         string_eight = eight.getText().toString();
 
-       // if (TextUtils.isEmpty(signInEmail)){
+       // if (TextUtils.isEmpty(string_first)){
         //calculate button clicked
         if (v.getId()==R.id.calculateButtonId){
-            if(first.length()<1){
+            if(TextUtils.isEmpty(string_first)){
                 first.setError("Enter a value");
                 first.requestFocus();
+                return;
             }
-            else if(second.length()<1){
-                second.setError("Enter a value");
-            }
-            else if(three.length()<1){
-                three.setError("Enter a value");
-            }else if(four.length()<1){
-                four.setError("Enter a value");
-            }else if(five.length()<1){
-                five.setError("Enter a value");
-            }else if(six.length()<1){
-                six.setError("Enter a value");
-            }else if(seven.length()<1){
-                seven.setError("Enter a value");
-            }else if(eight.length()<1){
-                eight.setError("Enter a value");
-            }
-            else{
 
+             if(TextUtils.isEmpty(string_second)){
+                second.setError("Enter a value");
+                second.requestFocus();
+                 return;
+            }
+
+             if(TextUtils.isEmpty(string_three)){
+                three.setError("Enter a value");
+                three.requestFocus();
+                 return;
+            }
+            if(TextUtils.isEmpty(string_four)){
+                four.setError("Enter a value");
+                four.requestFocus();
+                return;
+            }
+            if(TextUtils.isEmpty(string_five)){
+                five.setError("Enter a value");
+                five.requestFocus();
+                return;
+            }
+            if(TextUtils.isEmpty(string_six)){
+                six.setError("Enter a value");
+                six.requestFocus();
+                return;
+            }
+            if(TextUtils.isEmpty(string_seven)){
+                seven.setError("Enter a value");
+                seven.requestFocus();
+                return;
+            }
+            if(TextUtils.isEmpty(string_eight)){
+                eight.setError("Enter a value");
+                eight.requestFocus();
+                return;
+            }
+            
                 if(Float.parseFloat(first.getText().toString())>4 || Float.parseFloat(first.getText().toString())<2){
                     first.setError("Enter a valid value");
                 }
@@ -124,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     result.setText(totalCgpaAndGrade);
                 }
-            }
+
         }
 
         // resetButton Clicked
