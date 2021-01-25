@@ -52,6 +52,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_gravity="center"
+                android:imeOptions="actionNext"
                 android:hint="1st Semester GPA"
                 android:gravity="center"
                 android:id="@+id/firstSemesterEditTextId"
@@ -69,6 +70,7 @@
                 android:layout_weight="1">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/thirdSemesterEditTextId"
+                    android:imeOptions="actionNext"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -87,6 +89,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/fifthSemesterEditTextId"
+                    android:imeOptions="actionNext"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -104,6 +107,7 @@
                 android:layout_weight="1">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/seventhSemesterEditTextId"
+                    android:imeOptions="actionNext"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -140,6 +144,7 @@
                 android:layout_weight="1">
                 <com.google.android.material.textfield.TextInputEditText
                     android:inputType="numberDecimal"
+                    android:imeOptions="actionNext"
                     android:id="@+id/secondSemesterEditTextId"
                     android:textSize="18sp"
                     android:hint="2nd Semester GPA"
@@ -157,6 +162,7 @@
                 android:layout_weight="1">
                 <com.google.android.material.textfield.TextInputEditText
                     android:inputType="numberDecimal"
+                    android:imeOptions="actionNext"
                     android:id="@+id/fourthSemesterEditTextId"
                     android:textSize="18sp"
                     android:hint="4th Semester GPA"
@@ -174,6 +180,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:inputType="numberDecimal"
+                    android:imeOptions="actionNext"
                     android:id="@+id/sixthSemesterEditTextId"
                     android:textSize="18sp"
                     android:hint="6th Semester GPA"
@@ -194,6 +201,7 @@
                 >
                 <com.google.android.material.textfield.TextInputEditText
                     android:gravity="center"
+                    android:imeOptions="actionDone"
                     android:id="@+id/eighthSemesterEditTextId"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
